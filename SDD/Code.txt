@@ -1,0 +1,132 @@
+#include <string>
+#include <list>
+#include <ctime>
+
+class User
+{
+private:
+    std::string userID;
+    std::string email;
+    int phoneNumber;
+    std::list<User> contactList;
+
+public:
+    void addContact();
+    void deleteContact();
+    void updateContact();
+
+    std::string getUserID() { return userID; }
+    void setUserID(std::string userID) { this->userID = userID; }
+
+    std::string getEmail() { return email; }
+    void setEmail(std::string email) { this->email = email; }
+
+    int getPhoneNumber() { return phoneNumber; }
+    void setPhoneNumber(int phoneNumber) { this->phoneNumber = phoneNumber; }
+
+    std::list<User> getContactList() { return contactList; }
+    void setContactList(std::list<User> contactList) { this->contactList = contactList; }
+};
+
+class Message
+{
+private:
+    std::string messageContent;
+    std::string senderID;
+    std::string receiverID;
+    std::string messageID;
+    std::time_t messagetime;
+
+public:
+    void sendMessage();
+    void receiveMessage();
+
+    std::string getMessageContent() { return messageContent; }
+    void setMessageContent(std::string messageContent) { this->messageContent = messageContent; }
+
+    std::string getSenderID() { return senderID; }
+    void setSenderID(std::string senderID) { this->senderID = senderID; }
+
+    std::string getReceiverID() { return receiverID; }
+    void setReceiverID(std::string receiverID) { this->receiverID = receiverID; }
+
+    std::string getMessageID() { return messageID; }
+    void setMessageID(std::string messageID) { this->messageID = messageID; }
+
+    std::time_t getMessagetime() { return messagetime; }
+    void setMessagetime(std::time_t messagetime) { this->messagetime = messagetime; }
+};
+
+class Group
+{
+private:
+    std::string groupID;
+    std::string groupName;
+    std::list<User> groupMembers;
+    std::list<Message> groupChatHistory;
+
+public:
+    void addGroupMember();
+    void deleteGroupMember();
+    void updateGroupMember();
+    void createGroup();
+
+    std::string getGroupID() { return groupID; }
+    void setGroupID(std::string groupID) { this->groupID = groupID; }
+
+    std::string getGroupName() { return groupName; }
+    void setGroupName(std::string groupName) { this->groupName = groupName; }
+
+    std::list<User> getGroupMembers() { return groupMembers; }
+    void setGroupMembers(std::list<User> groupMembers) { this->groupMembers = groupMembers; }
+
+    std::list<Message> getGroupChatHistory() { return groupChatHistory; }
+    void setGroupChatHistory(std::list<Message> groupChatHistory) { this->groupChatHistory = groupChatHistory; }
+};
+
+class Media
+{
+private:
+std::string fileType;
+int fileSize;
+std::string fileLocation;
+
+public:
+void sendMedia();
+void receiveMedia();
+
+
+std::string getFileType() { return fileType; }
+void setFileType(std::string fileType) { this->fileType = fileType; }
+
+int getFileSize() { return fileSize; }
+void setFileSize(int fileSize) { this->fileSize = fileSize; }
+
+std::string getFileLocation() { return fileLocation; }
+void setFileLocation(std::string fileLocation) { this->fileLocation = fileLocation; }
+};
+
+class Profile
+{
+private:
+std::string status;
+std::string displayName;
+std::string profilePicture;
+
+public:
+void updateDisplayName();
+void updateStatus();
+void updateProfilePicture();
+
+
+
+std::string getStatus() { return status; }
+void setStatus(std::string status) { this->status = status; }
+
+std::string getDisplayName() { return displayName; }
+void setDisplayName(std::string displayName) { this->displayName = displayName; }
+
+std::string getProfilePicture() { return profilePicture; }
+void setProfilePicture(std::string profilePicture) { this->profilePicture = profilePicture; }
+};
+
